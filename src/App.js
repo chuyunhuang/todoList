@@ -1,12 +1,17 @@
 import React from 'react';
 import './App.css';
+import TodoList from './todoList/todoList';
+import TodoItem from './todoItem/todoItem';
 
-function App() {
-  return (
-    <div className="App">
-      <p>Hello React!! I am back</p>
-    </div>
-  );
+class App extends React.Component {
+
+  render() {
+    return (
+      <div> Hello
+        <TodoList></TodoList>
+        <TodoItem></TodoItem>
+      </div>)
+  }
 }
 
 export default App;
