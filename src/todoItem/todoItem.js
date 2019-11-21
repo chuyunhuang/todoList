@@ -6,7 +6,7 @@ class TodoItem extends React.Component {
     const { todo } = this.props
 
     return (
-      <div onClick={this.toggleTodo} className={"todoItem" + (todo.completed ? " completed " : " ")}>{todo.text}</div>
+      <div className="single-todo-item" onClick={this.toggleTodo} className={"todoItem" + (todo.completed ? " completed " : " ")}>{todo.text}</div>
     )
   }
   toggleTodo = () => {

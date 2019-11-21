@@ -5,7 +5,7 @@ class TodoList extends React.Component {
   render() {
     const { todo } = this.props
     return (
-      <div className="toDoList-Container">
+      <div className="todolist-container">
         {
           todo.map((item, index) => {
             return (

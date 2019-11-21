@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class AddTodo extends React.Component {
   constructor() {
     super()
@@ -12,10 +13,10 @@ class AddTodo extends React.Component {
     return (
       <div className="input-form-container">
         <form onSubmit={(e) => this.submitTodo(e)}>
-          <input id="todoInput" type="text" onChange={(e) => this.updateInput(e)} ></input>
-          <button type="submit" >Add Todo</button>
+          <input className="input-field" id="todoInput" type="text" onChange={(e) => this.updateInput(e)} ></input>
+          <button className="submit-btn" style={{ backgroundColor: "black", color: "#efff", borderRadius: " 10px", padding: "10px", margin: "5px" }} type="submit" >Add Todo</button>
         </form>
-      </div>)
+      </div >)
   }
 
   updateInput = (e) => {

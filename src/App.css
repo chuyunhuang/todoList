@@ -1,0 +1,44 @@
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  font-weight: 200;
+}
+
+.body{
+  width:100vw;
+  height: 100vh;
+  background: linear-gradient(to right,#ffd89b , #19547b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input-form-container{
+  padding-bottom: 20px;
+  color:#efff;
+}
+
+.input-field{
+  font-size: 20px;
+  border-radius: 10px;
+  margin:5px;
+  padding:5px;
+}
+
+.submit-btn{
+  font-size: 20px;
+  padding-left: 5px;
+  color: none;
+  border: none;
+}
+
+.todolist-container{
+  padding:20px;
+  /* background-color: #efff; */
+  width:20%;
+  border-radius: 10px;
+}
+
