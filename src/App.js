@@ -16,7 +16,7 @@ class App extends React.Component {
     return (
       <div> Hello
         <AddTodo addTodoFn={this.addTodo}></AddTodo>
-        <TodoList></TodoList>
+        <TodoList todo={this.state.todos}></TodoList>
         <TodoItem></TodoItem>
       </div>)
   }
@@ -27,14 +27,15 @@ class App extends React.Component {
       const savedTodos = JSON.parse(todos)
       this.setState({ todos: savedTodos })
     } else {
-
+      console.log('no todos')
     }
   }
 
   addTodo = async (todo) => {
-    await this.setState({ todos: [...this.state.todos], todo })
+    await this.setState({ todos: [...this.state.todos, todo] })
     localStorage.setItem('todos', JSON.stringify(this.state.todos))
     console.log(localStorage.getItem('todos'))
+
   }
 }
 
