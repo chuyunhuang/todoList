@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import TodoList from './todoList/todoList';
-import TodoItem from './todoItem/todoItem';
 import AddTodo from './addTodo/addTodo';
 
 class App extends React.Component {
@@ -16,8 +15,7 @@ class App extends React.Component {
     return (
       <div> Hello
         <AddTodo addTodoFn={this.addTodo}></AddTodo>
-        <TodoList todo={this.state.todos}></TodoList>
-        <TodoItem></TodoItem>
+        <TodoList updateTodoFn={this.updateTodo} todo={this.state.todos}></TodoList>
       </div>)
   }
 
@@ -32,10 +30,27 @@ class App extends React.Component {
   }
 
   addTodo = async (todo) => {
-    await this.setState({ todos: [...this.state.todos, todo] })
+    await this.setState({
+      todos: [...this.state.todos, {
+        text: todo,
+        completed: false
+      }]
+    })
     localStorage.setItem('todos', JSON.stringify(this.state.todos))
     console.log(localStorage.getItem('todos'))
 
+  }
+
+  updateTodo = (todo) => {
+    const newTodo = this.state.todos.map((item) => {
+      if (todo === item) {
+        return {
+          text: todo.text,
+          completed: !todo.completed
+        }
+      } else return item
+    })
+    this.setState({ todos: newTodo })
   }
 }
 

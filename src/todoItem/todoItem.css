@@ -1,0 +1,9 @@
+.todoItem{
+  bottom: 10px;
+  cursor: pointer;
+  color: green
+}
+
+.completed{
+  text-decoration: line-through;
+}
