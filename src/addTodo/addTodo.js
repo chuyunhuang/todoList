@@ -12,7 +12,7 @@ class AddTodo extends React.Component {
     return (
       <div className="input-form-container">
         <form onSubmit={(e) => this.submitTodo(e)}>
-          <input type="text" onChange={(e) => this.updateInput(e)} ></input>
+          <input id="todoInput" type="text" onChange={(e) => this.updateInput(e)} ></input>
           <button type="submit" >Add Todo</button>
         </form>
       </div>)
@@ -26,6 +26,7 @@ class AddTodo extends React.Component {
     e.preventDefault()
     console.log('submit', this.state)
     this.props.addTodoFn(this.state.todo)
+    document.getElementById('todoInput').value = ''
   }
 }
 
